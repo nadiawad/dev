@@ -1,10 +1,21 @@
 # http://apscheduler.readthedocs.io/en/latest/modules/triggers/cron.html
 
 from apscheduler.schedulers.blocking import BlockingScheduler
+from datetime import datetime
+import logging
+
 
 def job_function():
-    print "Hello World"
+    logger = logging.getLogger('Scheduler')
+    hdlr = logging.FileHandler('/Users/Nadi/dev/thermos/Scheduler.log')
+    formatter = logging.Formatter('%(asctime)s %(levelname)s %(message)s')
+    hdlr.setFormatter(formatter)
+    logger.addHandler(hdlr)
+    logger.setLevel(logging.INFO)
+    logger.info('Checking details now....') #20 for info
+    print "The scheduled job is running now..."
+
 
 sched = BlockingScheduler()
-sched.add_job(job_function, 'cron', day_of_week ='Mon-Sun', hour='20', minute='29')
+sched.add_job(job_function, 'cron', day_of_week ='Mon-Fri', hour='23', minute='59')
 sched.start()
