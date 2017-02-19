@@ -137,6 +137,26 @@ nav a:hover {
     padding: 0px 5% 10px;
 }
 
+/* Flashes Styling */
+
+.flashes ul{
+    margin: 0 0;
+    background: #FFD6A3;
+    color: #000;
+
+    list-style-type: none;
+    list-style: none;
+}
+
+.flashes ul{
+    background: #FFD6AB;
+    color: #000;
+}
+
+.article.flashes{
+    margin-bottom: 1em;
+}
+
 .footer-container footer {
     color: white;
     padding: 20px 0;
@@ -153,19 +173,6 @@ nav a:hover {
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 /* ==========================================================================
