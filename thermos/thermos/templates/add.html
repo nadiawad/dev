@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-
+{% from "form_macros.html" import render_field %}
 {% block title %}
 Thermos ------ Add :)
 {% endblock %}
@@ -16,6 +16,9 @@ Thermos ------ Add :)
     <form action="" method="post">
         {{form.hidden_tag()}}
         <table>
+            {{ render_field(form.url, size=50) }}
+            {{ render_field(form.description, size=50) }}
+            <!--
             <tr {% if form.url.errors %} class="error" {% endif %}>
                 <td>Please enter your bookmark here:</td>
                 <td>{{form.url(size = 50)}}</td>
@@ -33,8 +36,8 @@ Thermos ------ Add :)
             <tr>
                 <td>Please enter a description here:</td>
                 <td>{{form.description(size = 50)}}</td>
-            </tr>
-            <tr>
+            </tr>-->
+            <tr class="submit">
                 <td></td>
                 <td>
                     <button type="submit">Submit</button>
