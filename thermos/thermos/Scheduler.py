@@ -16,6 +16,10 @@ def job_function():
     print "The scheduled job is running now..."
 
 
-sched = BlockingScheduler()
-sched.add_job(job_function, 'cron', day_of_week ='Mon-Fri', hour='23', minute='59')
-sched.start()
+def schedule(cronHour, cronMinute):
+    sched = BlockingScheduler()
+    sched.add_job(job_function, 'cron', day_of_week ='Mon-Sun', hour=cronHour, minute=cronMinute)
+    sched.start()
+
+
+schedule(23, 35)
